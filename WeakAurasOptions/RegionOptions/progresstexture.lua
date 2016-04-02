@@ -473,7 +473,7 @@ end
 
 local function createIcon()
     local data = {
-        foregroundTexture = "Textures\\SpellActivationOverlays\\Eclipse_Sun",
+        foregroundTexture = "Interface\\AddOns\\WeakAuras\\Media\\CataclysmAlerts\\Eclipse_Sun",
         sameTexture = true,
         backgroundOffset = 2,
         blendMode = "BLEND",

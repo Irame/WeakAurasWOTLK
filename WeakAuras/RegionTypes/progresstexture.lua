@@ -55,8 +55,8 @@ end
 
     
 local default = {
-    foregroundTexture = "Textures\\SpellActivationOverlays\\Eclipse_Sun",
-    backgroundTexture = "Textures\\SpellActivationOverlays\\Eclipse_Sun",
+    foregroundTexture = "Interface\\AddOns\\WeakAuras\\Media\\CataclysmAlerts\\Eclipse_Sun",
+    backgroundTexture = "Interface\\AddOns\\WeakAuras\\Media\\CataclysmAlerts\\Eclipse_Sun",
 	desaturateBackground = false,
 	desaturateForeground = false,
     sameTexture = true,

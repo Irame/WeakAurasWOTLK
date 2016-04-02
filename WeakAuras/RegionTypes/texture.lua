@@ -2,7 +2,7 @@
 local halfroot2 = root2/2;
     
 local default = {
-    texture = "Textures\\SpellActivationOverlays\\Eclipse_Sun",
+    texture = "Interface\\AddOns\\WeakAuras\\Media\\CataclysmAlerts\\Eclipse_Sun",
 	desaturate = false,
     width = 200,
     height = 200,

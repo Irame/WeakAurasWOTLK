@@ -150,7 +150,7 @@ local function createIcon()
     local data = {
         height = 40,
         width = 40,
-        texture = "Textures\\SpellActivationOverlays\\Eclipse_Sun",
+        texture = "Interface\\AddOns\\WeakAuras\\Media\\CataclysmAlerts\\Eclipse_Sun",
         color = {1, 1, 1, 1},
         blendMode = "ADD",
         rotate = true;
