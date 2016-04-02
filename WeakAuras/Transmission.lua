@@ -70,7 +70,6 @@ end
 local decodeB64Table = {}
 
 function WeakAuras.decodeB64(str)
-	print("WeakAuras.decodeB64")
     local bit8 = decodeB64Table;
     local decoded_size = 0;
     local ch;
