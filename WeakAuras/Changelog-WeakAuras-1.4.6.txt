@@ -1,0 +1,32 @@
+------------------------------------------------------------------------
+r212 | mikk | 2012-04-07 12:48:41 +0000 (Sat, 07 Apr 2012) | 1 line
+Changed paths:
+   A /tags/1.4.6 (from /trunk:211)
+
+Tagging as 1.4.6
+------------------------------------------------------------------------
+r211 | stanzilla | 2012-04-02 22:04:33 +0000 (Mon, 02 Apr 2012) | 1 line
+Changed paths:
+   M /trunk/Transmission.lua
+
+fix for ticket #252, Mikk might come up with a better one but this works.
+------------------------------------------------------------------------
+r210 | stanzilla | 2012-03-30 22:33:23 +0000 (Fri, 30 Mar 2012) | 1 line
+Changed paths:
+   M /trunk/WeakAuras.lua
+   M /trunk/WeakAurasOptions/WeakAurasOptions.lua
+
+try to avoid some UI taint by setting preferredIndex to 3 for StaticPopupDialogs
+------------------------------------------------------------------------
+r209 | stanzilla | 2012-03-30 22:26:30 +0000 (Fri, 30 Mar 2012) | 1 line
+Changed paths:
+   M /trunk/RegionTypes/text.lua
+
+let's try this madness only when fonts are set to be bigger than 35
+------------------------------------------------------------------------
+r208 | stanzilla | 2012-01-14 02:54:52 +0000 (Sat, 14 Jan 2012) | 1 line
+Changed paths:
+   M /trunk/WeakAuras.lua
+
+fix dynamic load options for heroic/normal instances based on ticket #254
+------------------------------------------------------------------------
