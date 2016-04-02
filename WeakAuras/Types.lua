@@ -350,13 +350,13 @@ WeakAuras.orientation_types = {
     VERTICAL = L["Bottom to Top"],
     VERTICAL_INVERSE = L["Top to Bottom"]
 };
-local _, firstTabName = GetTalentTabInfo(1);
-local _, secondTabName = GetTalentTabInfo(2);
-local _, thirdTabName = GetTalentTabInfo(3);
+local firstTabName = GetTalentTabInfo(1);
+local secondTabName = GetTalentTabInfo(2);
+local thirdTabName = GetTalentTabInfo(3);
 WeakAuras.spec_types = {
-    [1] = L["First Tree"]..(firstTabName and " ("..firstTabName..")" or ""),
-    [2] = L["Second Tree"]..(secondTabName and " ("..secondTabName..")" or ""),
-    [3] = L["Third Tree"]..(thirdTabName and " ("..thirdTabName..")" or "")
+    [1] = L["1. Tree"]..(firstTabName and " ("..firstTabName..")" or ""),
+    [2] = L["2. Tree"]..(secondTabName and " ("..secondTabName..")" or ""),
+    [3] = L["3. Tree"]..(thirdTabName and " ("..thirdTabName..")" or "")
 };
 WeakAuras.totem_types = {
     [1] = L["Fire"],

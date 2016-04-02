@@ -1886,6 +1886,21 @@ function WeakAuras.EndEvent(id, triggernum, force)
     end
 end
 
+local function GetPrimaryTalentTree()
+	local numTabs = GetNumTalentTabs()
+	local primarySpec = {points = 0, index = 0}
+	for i = 1, MAX_TALENT_TABS do
+		if ( i <= numTabs ) then
+			_,_,pointsSpent = GetTalentTabInfo(i)
+			if pointsSpent > primarySpec.points then
+				primarySpec.index = i
+				primarySpec.points = pointsSpent
+			end
+		end
+	end
+	return primarySpec.index
+end
+
 local inCombat = UnitAffectingCombat("player");
 local playerLevel = UnitLevel("player");
 function WeakAuras.ScanForLoads(self, event, arg1)
