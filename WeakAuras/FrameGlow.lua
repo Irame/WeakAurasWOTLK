@@ -164,7 +164,8 @@ end
 function ActionButton_OverlayGlowAnimateFadeOut(self, elapsed)
 	self.fadeOutTime = self.fadeOutTime + elapsed;
 	if self.fadeOutTime >= 0.4 then
-		ActionButton_OverlayGlowAnimOutFinished(self)
+		ActionButton_OverlayGlowAnimOutFinished(self);
+		return
 	end
 	if self.fadeOutTime > 0.2 then
 		local progress = (self.fadeOutTime - 0.2)/0.2;
