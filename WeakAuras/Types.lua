@@ -350,14 +350,21 @@ WeakAuras.orientation_types = {
     VERTICAL = L["Bottom to Top"],
     VERTICAL_INVERSE = L["Top to Bottom"]
 };
-local firstTabName = GetTalentTabInfo(1);
-local secondTabName = GetTalentTabInfo(2);
-local thirdTabName = GetTalentTabInfo(3);
-WeakAuras.spec_types = {
-    [1] = L["1. Tree"]..(firstTabName and " ("..firstTabName..")" or ""),
-    [2] = L["2. Tree"]..(secondTabName and " ("..secondTabName..")" or ""),
-    [3] = L["3. Tree"]..(thirdTabName and " ("..thirdTabName..")" or "")
-};
+WeakAuras.spec_types = {}
+local spec_frame = CreateFrame("frame");
+spec_frame:RegisterEvent("PLAYER_LOGIN")
+-- workaround because immediately after "PLAYER_LOGIN" the TalentTabNames are not available
+spec_frame:SetScript("OnEvent", function(self, event)
+	self:Show()
+end);
+spec_frame:SetScript("OnUpdate", function(self)
+	wipe(WeakAuras.spec_types);
+	for n=1,3 do
+		local tabName = GetTalentTabInfo(n)
+		WeakAuras.spec_types[n] = L[("%d. Tree"):format(n)]..(tabName and " ("..tabName..")" or "")
+	end
+	self:Hide()
+end);
 WeakAuras.totem_types = {
     [1] = L["Fire"],
     [2] = L["Earth"],
