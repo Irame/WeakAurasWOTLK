@@ -1,0 +1,69 @@
+<Ui xmlns="http://www.blizzard.com/wow/ui/"
+ xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+ xsi:schemaLocation="http://www.blizzard.com/wow/ui/ ..\FrameXML\UI.xsd">
+	<Script file="FrameGlow.lua"/>
+	<Frame name="ActionBarButtonSpellActivationAlert" virtual="true">
+		<Layers>
+			<Layer level="BACKGROUND">
+				<Texture name="$parentSpark" parentKey="spark" file="Interface\AddOns\WeakAuras\FrameGlowOverlay\IconAlert" alpha="0" setAllPoints="true">
+					<Anchors>
+						<Anchor point="CENTER"/>
+					</Anchors>
+					<TexCoords left="0.00781250" right="0.61718750" top="0.00390625" bottom="0.26953125"/>
+				</Texture>
+			</Layer>
+			<Layer level="ARTWORK">
+				<Texture name="$parentInnerGlow" parentKey="innerGlow" file="Interface\AddOns\WeakAuras\FrameGlowOverlay\IconAlert" alpha="0" setAllPoints="true">
+					<Anchors>
+						<Anchor point="CENTER"/>
+					</Anchors>
+					<TexCoords left="0.00781250" right="0.50781250" top="0.27734375" bottom="0.52734375"/>
+				</Texture>
+				<Texture name="$parentInnerGlowOver" parentKey="innerGlowOver" file="Interface\AddOns\WeakAuras\FrameGlowOverlay\IconAlert" alpha="0">
+					<Anchors>
+						<Anchor point="TOPLEFT" relativeTo="$parentInnerGlow" relativePoint="TOPLEFT"/>
+						<Anchor point="BOTTOMRIGHT" relativeTo="$parentInnerGlow" relativePoint="BOTTOMRIGHT"/>
+					</Anchors>
+					<TexCoords left="0.00781250" right="0.50781250" top="0.53515625" bottom="0.78515625"/>
+				</Texture>
+				<Texture name="$parentOuterGlow" parentKey="outerGlow" file="Interface\AddOns\WeakAuras\FrameGlowOverlay\IconAlert" alpha="0" setAllPoints="true">
+					<Anchors>
+						<Anchor point="CENTER"/>
+					</Anchors>
+					<TexCoords left="0.00781250" right="0.50781250" top="0.27734375" bottom="0.52734375"/>
+				</Texture>
+				<Texture name="$parentOuterGlowOver" parentKey="outerGlowOver" file="Interface\AddOns\WeakAuras\FrameGlowOverlay\IconAlert" alpha="0">
+					<Anchors>
+						<Anchor point="TOPLEFT" relativeTo="$parentOuterGlow" relativePoint="TOPLEFT"/>
+						<Anchor point="BOTTOMRIGHT" relativeTo="$parentOuterGlow" relativePoint="BOTTOMRIGHT"/>
+					</Anchors>
+					<TexCoords left="0.00781250" right="0.50781250" top="0.53515625" bottom="0.78515625"/>
+				</Texture>
+			</Layer>
+			<Layer level="OVERLAY">
+				<Texture name="$parentAnts" parentKey="ants" file="Interface\AddOns\WeakAuras\FrameGlowOverlay\IconAlertAnts" alpha="0" setAllPoints="true">
+					<Anchors>
+						<Anchor point="CENTER"/>
+					</Anchors>
+				</Texture>
+			</Layer>
+		</Layers>
+		<Scripts>
+			<OnUpdate>
+				if self.fadeInTime ~= nil then
+					ActionButton_OverlayGlowAnimateFadeIn(self, elapsed);
+				end
+				if self.fadeOutTime ~= nil then
+					ActionButton_OverlayGlowAnimateFadeOut(self, elapsed);
+				end
+				ActionButton_OverlayGlowAnimateTexCoords(self.ants, 256, 256, 48, 48, 22, elapsed, 0.01)
+			</OnUpdate>
+			<OnHide>
+				if self.fadeOutTime ~= nil then
+					self.fadeOutTime = nil;
+					ActionButton_OverlayGlowAnimOutFinished(self);
+				end
+			</OnHide>
+		</Scripts>
+	</Frame>
+</Ui>

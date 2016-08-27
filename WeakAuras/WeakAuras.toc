@@ -35,6 +35,9 @@ Localization-ruRU.lua
 Localization-zhCN.lua
 Localization-zhTW.lua
 
+FrameGlow.xml
+FrameGlow.lua
+
 Prototypes.lua
 Types.lua
 WeakAuras.lua
