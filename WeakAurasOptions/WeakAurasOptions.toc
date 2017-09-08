@@ -31,6 +31,8 @@ Localization-ruRU.lua
 Localization-zhCN.lua
 Localization-zhTW.lua
 
+fonts\fonts.lua
+
 ForAllIndentsAndPurposes.lua
 
 RegionOptions\aurabar.lua

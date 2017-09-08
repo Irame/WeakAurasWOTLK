@@ -6642,7 +6642,7 @@ function WeakAuras.CreateFrame()
     local texteditorbox = AceGUI:Create("MultiLineEditBox");
     texteditorbox:SetWidth(400);
     texteditorbox.button:Hide();
-    local fontPath = SharedMedia:Fetch("font", "Jack Input");
+    local fontPath = SharedMedia:Fetch("font", "VeraMono");
     if(fontPath) then
         texteditorbox.editBox:SetFont(fontPath, 12);
     end
