@@ -365,6 +365,7 @@ spec_frame:SetScript("OnUpdate", function(self)
 	end
 	self:Hide()
 end);
+WeakAuras.pri_sec_spec_types = { TALENT_SPEC_PRIMARY, TALENT_SPEC_SECONDARY }
 WeakAuras.totem_types = {
     [1] = L["Fire"],
     [2] = L["Earth"],

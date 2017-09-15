@@ -391,6 +391,13 @@ WeakAuras.load_prototype = {
             values = "spec_types",
             init = "arg"
         },
+		{
+			name = "pri_sec_spec",
+			display = L["Pri./Sec. Specialization"],
+			type = "multiselect",
+			values = "pri_sec_spec_types",
+			init = "arg"
+		},
         {
             name = "level",
             display = L["Player Level"],

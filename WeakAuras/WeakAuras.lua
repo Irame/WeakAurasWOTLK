@@ -1908,7 +1908,7 @@ function WeakAuras.ScanForLoads(self, event, arg1)
         playerLevel = arg1;
     end
     local typefunc = type;
-    local player, zone, spec, role = UnitName("player"), GetRealZoneText(), GetPrimaryTalentTree(), UnitGroupRolesAssigned("player");
+    local player, zone, spec, specgroup, role = UnitName("player"), GetRealZoneText(), GetPrimaryTalentTree(), GetActiveTalentGroup(), UnitGroupRolesAssigned("player");
     local _, class = UnitClass("player");
     local _, type, difficultyIndex, _, maxPlayers, dynamicDifficulty, isDynamic = GetInstanceInfo();
     local size, difficulty;
@@ -1950,8 +1950,8 @@ function WeakAuras.ScanForLoads(self, event, arg1)
     local shouldBeLoaded, couldBeLoaded;
     for id, triggers in pairs(auras) do
         local _, data = next(triggers);
-        shouldBeLoaded = data.load and data.load("ScanForLoads_Auras", incombat, player, class, spec, playerLevel, zone, size, difficulty, role);
-        couldBeLoaded = data.load and data.load("ScanForLoads_Auras", true, player, class, spec, playerLevel, zone, size, difficulty, role);
+        shouldBeLoaded = data.load and data.load("ScanForLoads_Auras", incombat, player, class, spec, specgroup, playerLevel, zone, size, difficulty, role);
+        couldBeLoaded = data.load and data.load("ScanForLoads_Auras", true, player, class, spec, specgroup, playerLevel, zone, size, difficulty, role);
         if(shouldBeLoaded and not loaded[id]) then
             WeakAuras.LoadDisplay(id);
             changed = changed + 1;
@@ -1976,8 +1976,8 @@ function WeakAuras.ScanForLoads(self, event, arg1)
     end
     for id, triggers in pairs(events) do
         local _, data = next(triggers);
-        shouldBeLoaded = data.load and data.load("ScanForLoads_Events", incombat, player, class, spec, playerLevel, zone, size, difficulty, role);
-        couldBeLoaded = data.load and data.load("ScanForLoads_Auras", true, player, class, spec, playerLevel, zone, size, difficulty, role);
+        shouldBeLoaded = data.load and data.load("ScanForLoads_Events", incombat, player, class, spec, specgroup, playerLevel, zone, size, difficulty, role);
+        couldBeLoaded = data.load and data.load("ScanForLoads_Auras", true, player, class, spec, specgroup, playerLevel, zone, size, difficulty, role);
         if(shouldBeLoaded and not loaded[id]) then
             WeakAuras.LoadDisplay(id);
             changed = changed + 1;
